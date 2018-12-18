@@ -12,12 +12,12 @@ import org.springframework.web.client.RestClientException;
 public class RestApplication {
 
 	public static void main(String[] args) throws RestClientException, IOException {
-		ApplicationContext ctx = SpringApplication.run(
+		/*ApplicationContext ctx =*/ SpringApplication.run(
 				RestApplication.class, args);
 		
-		ConsumerClient consumerClient=ctx.getBean(ConsumerClient.class);
+		/*ConsumerClient consumerClient=ctx.getBean(ConsumerClient.class);
 		System.out.println("Calling from client"+consumerClient);
-		consumerClient.getEmployee();
+		consumerClient.getEmployee();*/
 		
 	}
 	
