@@ -25,7 +25,7 @@ public class ConsumerClient {
 	
 	public Employee getEmployee() throws RestClientException, IOException {
 		
-		List<ServiceInstance> instances=discoveryClient.getInstances("employee-producer");
+		/*List<ServiceInstance> instances=discoveryClient.getInstances("employee-producer");
 		ServiceInstance serviceInstance=instances.get(0);
 		Employee emp = new Employee();
 		
@@ -43,7 +43,11 @@ public class ConsumerClient {
 		{
 			System.out.println(ex);
 		}
-		System.out.println("This is produced by producer "+response.getBody());
+		System.out.println("This is produced by producer "+response.getBody());*/
+		Employee emp = new RestTemplate().getForObject("http://employee/rest/emp",
+                Employee.class);
+       System.out.println("Response:{} "+emp.getName());
+		
 		return emp;
 	}
 

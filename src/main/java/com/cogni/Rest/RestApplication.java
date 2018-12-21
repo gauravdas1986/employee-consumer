@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class RestApplication {
@@ -18,8 +19,8 @@ public class RestApplication {
 		ConsumerClient consumerClient=ctx.getBean(ConsumerClient.class);
 		System.out.println("Calling from client"+consumerClient);
 		consumerClient.getEmployee();
-		
 	}
+	
 	
 	@Bean
 	public  ConsumerClient  consumerClient()
